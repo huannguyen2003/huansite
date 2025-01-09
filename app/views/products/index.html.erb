@@ -1,11 +1,17 @@
-<%= link_to "New product", new_product_path, class: "button" %>
+<div class="products-container">
+  <%= link_to "New Product", new_product_path, class: "button new-product-button" %>
 
-<div id="products">
-  <% @products.each do |product| %>
-    <section class="product">
-      <div>
-        <%= link_to product.name, product, class: "product-link" %>
-      </div>
-    </section>
-  <% end %>
+  <div id="products">
+    <% if @products.any? %>
+      <% @products.each do |product| %>
+        <section class="product">
+          <div class="product-details">
+            <%= link_to product.name, product, class: "product-link" %>
+          </div>
+        </section>
+      <% end %>
+    <% else %>
+      <p class="no-products">No products available. Please create a new product.</p>
+    <% end %>
+  </div>
 </div>
