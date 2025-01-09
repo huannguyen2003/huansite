@@ -1,4 +1,11 @@
-<h1>Edit product</h1>
+<div class="edit-product">
+  <h1 class="form-title">Edit Product</h1>
 
-<%= render "form", product: @product %>
-<%= link_to "Cancel", @product %>
+  <div class="form-container">
+    <%= render "form", product: @product %>
+  </div>
+
+  <div class="form-actions">
+    <%= link_to "Cancel", @product, class: "button cancel-button" %>
+  </div>
+</div>
